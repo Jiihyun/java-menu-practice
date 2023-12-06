@@ -74,6 +74,11 @@ public enum Menu {
                 .orElseThrow(ExceptionMessage.NON_EXIST_MENU::getException);
     }
 
+    public static List<String> getMenuNamesInCategory(MenuCategories menuCategory) {
+        return menus.stream().filter(menu -> menu.category.equals(menuCategory))
+                .map(menu -> menu.menuName).toList();
+    }
+
     public String getMenuName() {
         return menuName;
     }

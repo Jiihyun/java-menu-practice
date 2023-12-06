@@ -11,14 +11,16 @@ public class WeeklyMenuCategories {
 
     public List<MenuCategories> getWeeklyMenuCategories() {
         List<MenuCategories> menuCategories = new ArrayList<>();
-        for (int weekIndex = 0; weekIndex < WEEK_COUNT; weekIndex++) {
-            if (isDuplicatedUnderTwo(menuCategories))
-                menuCategories.add(MenuCategories.getCategory());
+        while (menuCategories.size() < WEEK_COUNT) {
+            MenuCategories category = MenuCategories.getCategory();
+            if (isDuplicatedUnderTwo(menuCategories, category)) {
+                menuCategories.add(category);
+            }
         }
         return menuCategories;
     }
 
-    private boolean isDuplicatedUnderTwo(List<MenuCategories> categories) {
-        return categories.stream().distinct().count() < POSSIBLE_CATEGORY_DUPLICATE_COUNT;
+    private boolean isDuplicatedUnderTwo(List<MenuCategories> menuCategories, MenuCategories category) {
+        return menuCategories.stream().filter(menuCategory -> menuCategory == category).count() < POSSIBLE_CATEGORY_DUPLICATE_COUNT;
     }
 }

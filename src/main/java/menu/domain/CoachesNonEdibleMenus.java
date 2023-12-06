@@ -8,4 +8,8 @@ public class CoachesNonEdibleMenus {
     public CoachesNonEdibleMenus(List<NonEdibleMenusByCoach> coachesNonEdibleMenus) {
         this.coachesNonEdibleMenus = coachesNonEdibleMenus;
     }
+
+    public List<NonEdibleMenusByCoach> getCoachesNonEdibleMenus() {
+        return coachesNonEdibleMenus;
+    }
 }
