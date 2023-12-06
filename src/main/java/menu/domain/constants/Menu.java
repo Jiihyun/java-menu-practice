@@ -7,7 +7,7 @@ import java.util.List;
 import static menu.domain.constants.MenuCategories.*;
 
 public enum Menu {
-    NONE("", NONE),
+    NONE("", MenuCategories.NONE),
     GYUDON("규동", JAPANESE),
     UDON("우동", JAPANESE),
     MISOSHIRU("미소시루", JAPANESE),
