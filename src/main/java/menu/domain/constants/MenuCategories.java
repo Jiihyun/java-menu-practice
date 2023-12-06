@@ -1,4 +1,4 @@
-package menu.domain;
+package menu.domain.constants;
 
 public enum MenuCategories {
     NONE("없음"),

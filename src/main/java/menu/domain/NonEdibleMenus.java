@@ -1,5 +1,6 @@
 package menu.domain;
 
+import menu.domain.constants.Menu;
 import menu.validator.NonEdibleMenuValidator;
 
 import java.util.List;

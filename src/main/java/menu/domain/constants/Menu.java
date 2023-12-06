@@ -1,10 +1,10 @@
-package menu.domain;
+package menu.domain.constants;
 
 import menu.exception.ExceptionMessage;
 
 import java.util.List;
 
-import static menu.domain.MenuCategories.*;
+import static menu.domain.constants.MenuCategories.*;
 
 public enum Menu {
     NONE("", NONE),
