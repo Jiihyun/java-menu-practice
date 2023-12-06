@@ -6,10 +6,11 @@ public enum PrintMessage {
      */
     INPUT_START("점심 메뉴 추천을 시작합니다." + System.lineSeparator()),
     INPUT_COACHES_NAME_MSG("코치의 이름을 입력해 주세요. (, 로 구분)"),
-    INPUT_NONEDIBLE_MENU_MSG(" (이)가 못 먹는 메뉴를 입력해 주세요.");
-       /*
-       OutputView
-        */
+    INPUT_NON_EDIBLE_MENU_MSG("(이)가 못 먹는 메뉴를 입력해 주세요." + System.lineSeparator()),
+    /*
+    OutputView
+     */
+    OUTPUT_END(System.lineSeparator() + "추천을 완료했습니다.");
 
     private final String message;
 

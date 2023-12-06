@@ -11,8 +11,7 @@ import menu.io.writer.Writer;
 import java.util.ArrayList;
 import java.util.List;
 
-import static menu.view.constants.PrintMessage.INPUT_COACHES_NAME_MSG;
-import static menu.view.constants.PrintMessage.INPUT_START;
+import static menu.view.constants.PrintMessage.*;
 
 public class InputView {
     private final Writer writer;
@@ -40,6 +39,7 @@ public class InputView {
 
     private void putCoachesNonEdibleMenus(List<NonEdibleMenusByCoach> coachesNonEdibleMenus, Coaches coaches, int index) {
         String coachName = coaches.getCoachName(index);
+        writer.writef(coachName + INPUT_NON_EDIBLE_MENU_MSG.getMessage());
         NonEdibleMenus nonEdibleMenus = retryHandler.retryUntilSuccess(this::getNonEdibleMenu);
         coachesNonEdibleMenus.add(new NonEdibleMenusByCoach(coachName, nonEdibleMenus));
     }
