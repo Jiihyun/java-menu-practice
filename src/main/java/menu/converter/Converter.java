@@ -19,5 +19,11 @@ public class Converter {
                 .toList();
     }
 
+    public static List<String> convertStrToListWithoutValidateBlank(String input) {
+        return Arrays.stream(input.split(REGEX))
+                .map(String::trim)
+                .toList();
+    }
+
 
 }

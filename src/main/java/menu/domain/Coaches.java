@@ -11,4 +11,12 @@ public class Coaches {
         NameValidator.validateName(names);
         this.names = names;
     }
+
+    public int getCoachesCount() {
+        return names.size();
+    }
+
+    public String getCoachName(int index) {
+        return names.get(index);
+    }
 }
