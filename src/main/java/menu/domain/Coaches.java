@@ -4,10 +4,10 @@ import menu.validator.NameValidator;
 
 import java.util.List;
 
-public class CoachesName {
+public class Coaches {
     private final List<String> names;
 
-    public CoachesName(List<String> names) {
+    public Coaches(List<String> names) {
         NameValidator.validateName(names);
         this.names = names;
     }

@@ -1,7 +1,7 @@
 package menu.view;
 
 import menu.converter.Converter;
-import menu.domain.CoachesName;
+import menu.domain.Coaches;
 import menu.io.reader.Reader;
 import menu.io.writer.Writer;
 
@@ -23,15 +23,14 @@ public class InputView {
 
     public void readAll() {
         writer.writeln(INPUT_START.getMessage());
-        CoachesName coachesName = retryHandler.retryUntilSuccess(this::getCoachesName);
+        Coaches coaches = retryHandler.retryUntilSuccess(this::getCoachesName);
         reader.close();
 //        return aaa;
     }
 
-    private CoachesName getCoachesName() {
+    private Coaches getCoachesName() {
         writer.writeln(INPUT_COACHES_NAME_MSG.getMessage());
         List<String> names = Converter.convertStrToList(reader.readLine());
-        return new CoachesName(names);
+        return new Coaches(names);
     }
-
 }
