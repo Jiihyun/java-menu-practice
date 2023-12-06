@@ -1,8 +1,14 @@
 package menu.controller;
 
 import menu.domain.CoachesNonEdibleMenus;
+import menu.domain.RecommendMachine;
+import menu.domain.WeeklyMenuCategories;
+import menu.domain.constants.MenuCategories;
 import menu.view.InputView;
 import menu.view.OutputView;
+
+import java.util.List;
+import java.util.Map;
 
 public class ProgramController {
     private final InputView inputView;
@@ -16,7 +22,9 @@ public class ProgramController {
 
     public void start() {
         CoachesNonEdibleMenus coachesNonEdibleMenus = inputView.readAll();
-        // 2. 실행
-        // 3. 출력
+        List<MenuCategories> weeklyMenuCategories = new WeeklyMenuCategories().getWeeklyMenuCategories();
+        RecommendMachine recommendMachine = new RecommendMachine(coachesNonEdibleMenus, weeklyMenuCategories);
+        Map<String, List<String>> weeklyMenu = recommendMachine.getWeeklyMenu();
+        outputView.printResult(weeklyMenu, weeklyMenuCategories);
     }
 }
